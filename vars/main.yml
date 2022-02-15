@@ -1,8 +1,8 @@
 ---
 install_packages:
   - 'tftpd-hpa'
-  - 'debian-installer-8-netboot-i386'
-  - 'debian-installer-8-netboot-amd64'
+  - 'debian-installer-11-netboot-i386'
+  - 'debian-installer-11-netboot-amd64'
   - 'pxelinux'
   - 'syslinux-efi'
   - 'ipxe'
@@ -80,11 +80,11 @@ start_services:
   - 'tftpd-hpa'
 lines_in_files:
   - dest:               '/etc/fstab'
-    regexp:             '^/usr/lib/debian-installer/images/8/amd64/text/debian-installer/amd64 '
-    line:               '/usr/lib/debian-installer/images/8/amd64/text/debian-installer/amd64   /srv/tftp/debian-installer/amd64        none    bind,auto       0       0 # This line added by ansible.'
+    regexp:             '^/usr/lib/debian-installer/images/11/amd64/text/debian-installer/amd64 '
+    line:               '/usr/lib/debian-installer/images/11/amd64/text/debian-installer/amd64   /srv/tftp/debian-installer/amd64        none    bind,auto       0       0 # This line added by ansible.'
   - dest:               '/etc/fstab'
-    regexp:             '^/usr/lib/debian-installer/images/8/i386/text/debian-installer/i386 '
-    line:               '/usr/lib/debian-installer/images/8/i386/text/debian-installer/i386     /srv/tftp/debian-installer/i386         none    bind,auto       0       0 # This line added by ansible.'
+    regexp:             '^/usr/lib/debian-installer/images/11/i386/text/debian-installer/i386 '
+    line:               '/usr/lib/debian-installer/images/11/i386/text/debian-installer/i386     /srv/tftp/debian-installer/i386         none    bind,auto       0       0 # This line added by ansible.'
   - dest:               '/etc/fstab'
     regexp:             '^/usr/lib/PXELINUX/ '
     line:               '/usr/lib/PXELINUX/                                                     /srv/tftp/pxelinux                      none    bind,auto       0       0 # This line added by ansible.'
