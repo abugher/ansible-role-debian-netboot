@@ -9,7 +9,7 @@ install_packages:
 enable_services:
   - 'tftpd-hpa'
 create_files:
-  - path:               '/usr/share/nginx/www/plaintext'
+  - path:               '/usr/share/nginx/html/plaintext'
     owner:              'root'
     group:              'root'
     mode:               '0755'
@@ -54,7 +54,7 @@ install_files:
     group:              'root'
     mode:               '0644'
     src:                "files/conf/preseed.cfg"
-    dest:               '/usr/share/nginx/www/plaintext/preseed.cfg'
+    dest:               '/usr/share/nginx/html/plaintext/preseed.cfg'
 symlinks:
   - owner:              'root'
     group:              'root'  
