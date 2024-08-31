@@ -1,8 +1,9 @@
 ---
 install_packages:
   - 'tftpd-hpa'
-  - 'debian-installer-11-netboot-i386'
+  # Debian installer network-bootable material
   - 'debian-installer-11-netboot-amd64'
+  # generic menu-building network-bootable material
   - 'pxelinux'
   - 'syslinux-efi'
   - 'ipxe'
