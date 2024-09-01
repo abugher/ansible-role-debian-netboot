@@ -45,12 +45,23 @@ create_files:
     mode:               '0755'
     state:              'directory'
     path:               '/srv/tftp/ipxe'
+  - owner:              'root'
+    group:              'root'
+    mode:               '0755'
+    state:              'directory'
+    path:               '/srv/tftp/config'
 install_files:
   - owner:              'root'
     group:              'root'
     mode:               '0644'
     src:                "files/conf/preseed.cfg"
     dest:               '/usr/share/nginx/html/plaintext/preseed.cfg'
+template_files:
+  - owner:              'root'
+    group:              'root'
+    mode:               '0644'
+    src:                'templates/debian-live.ipxe'
+    dest:               '/srv/tftp/debian-live.ipxe'
 start_services:
   - 'tftpd-hpa'
 lines_in_files:

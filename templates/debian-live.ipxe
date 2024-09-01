@@ -1,0 +1,7 @@
+#!ipxe
+# https://ipxe.org/appnote/debian_live
+
+kernel          http://{{ groups['debian-live-build'][0] }}/public/debian-live/amd64/debian-live/tftpboot/live/vmlinuz
+initrd          http://{{ groups['debian-live-build'][0] }}/public/debian-live/amd64/debian-live/tftpboot/live/initrd.img
+imgargs         vmlinuz boot=live config hooks=filesystem username=live noeject fetch=http://{{ groups['debian-live-build'][0] }}/public/debian-live/amd64/debian-live/binary/live/filesystem.squashfs
+boot
