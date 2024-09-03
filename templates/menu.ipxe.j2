@@ -1,0 +1,17 @@
+#!ipxe
+
+menu                            Boot Menu
+item debian-live                Debian Live (run Debian without installing)
+item debian-installer           Debian Installer (install Debian)
+choose selection || goto shell
+
+goto ${selection}
+
+:debian-live
+chain --replace                 debian-live.ipxe
+
+:debian-installer
+chain --replace                 debian-installer.ipxe
+
+:shell
+shell
